@@ -1,0 +1,5 @@
+celery
+fastapi
+pytest
+redis
+uvicorn[standard]
