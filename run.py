@@ -24,15 +24,14 @@ celery = Celery(
 
 
 ################################################################################
-@app.get("/")
-async def index():
-    return {
-        "message": "Returning message"
-    }
+@app.post("/")
+async def index(param: str):
+    task = work.delay(param)
+    return task.get()
 
 
 # Simulate a long-running task
 @celery.task
-def work(arg):
+def work(param: str):
     time.sleep(10)
-    return arg
+    return param
