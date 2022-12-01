@@ -1,5 +1,7 @@
-celery
+celery==4.4.7
+eventlet
 fastapi
+gevent
 pytest
 redis
 uvicorn[standard]
