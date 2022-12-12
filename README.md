@@ -36,7 +36,7 @@ For Windows,
 celery -A run.celery worker --loglevel=info -P gevent
 ```
 
-5. Run FastAPI application
+5. In a separate terminal, run FastAPI application
 ```
 uvicorn run:app --reload
 ```
